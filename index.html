@@ -25,7 +25,6 @@
             overflow-x: hidden;
         }
 
-        /* Навигация в темных тонах */
         .navbar {
             background: rgba(26, 26, 26, 0.95);
             border-bottom: 1px solid #333;
@@ -35,7 +34,6 @@
         .nav-link { font-size: 0.85rem; font-weight: 400; text-transform: uppercase; margin-left: 25px; color: var(--accent-gray) !important; transition: 0.3s; }
         .nav-link:hover { color: #fff !important; }
 
-        /* Геро-секция: монохром */
         .hero {
             height: 100vh;
             display: flex;
@@ -44,13 +42,15 @@
         }
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; line-height: 1.1; }
 
-        /* Карточки продукции: градиент серого */
         .product-item {
             background: var(--deep-gray);
             border: 1px solid #444;
             padding: 40px 30px;
             transition: 0.4s;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .product-item:hover { background: #363636; border-color: var(--accent-gray); }
         
@@ -66,7 +66,6 @@
         }
         .btn-industrial:hover { background: #fff; color: #000; }
 
-        /* Секция проектов */
         .project-block {
             border-left: 2px solid var(--accent-gray);
             padding-left: 20px;
@@ -77,7 +76,6 @@
         .gray-text { color: var(--accent-gray); }
         .yellow-text { color: var(--brand-yellow); }
         
-        /* Ссылка-телефон в шапке */
         .phone-link {
             text-decoration: none;
             color: #fff;
@@ -124,82 +122,87 @@
     </div>
 </section>
 
-<section id="about" class="bg-black">
-    <div class="container">
-        <div class="row g-5">
-            <div class="col-lg-6" data-aos="fade-right">
-                <h2 class="h1 text-uppercase mb-4 Oswald">О компании</h2>
-                <p>Наше предприятие специализируется на глубокой переработке горной массы. Мы используем высокоэффективное оборудование для получения продукции, соответствующей государственным стандартам и включенной в систему АГСК.</p>
-                <div class="mt-5">
-                    <div class="project-block">
-                        <h5>Васильковское месторождение</h5>
-                        <p class="small text-secondary">Основная сырьевая база с высокими показателями износостойкости материала.</p>
-                    </div>
-                    <div class="project-block">
-                        <h5>Технологический парк</h5>
-                        <p class="small text-secondary">Использование техники Sandvik и Shantui для бесперебойной добычи и фракционирования.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div style="filter: grayscale(100%); border: 1px solid #333;">
-                    <img src="https://images.unsplash.com/photo-1574689049868-e94ed5301745?auto=format&fit=crop&q=80&w=800" class="img-fluid" alt="Производство">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
 <section id="products">
     <div class="container">
         <h2 class="text-center h1 text-uppercase mb-5">Продукция</h2>
         <div class="row g-4">
             <div class="col-md-4" data-aos="zoom-in">
                 <div class="product-item">
-                    <h4 class="Oswald text-uppercase">Щебень фр. 5-20</h4>
-                    <p class="small gray-text">Высокопрочный, ГОСТ 8267-93</p>
-                    <p>Основной компонент для производства бетона и асфальтобетона.</p>
-                    <div class="h4 mt-4">1 890 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
-                    <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 5-20', 1890)">В корзину</button>
+                    <div>
+                        <h4 class="Oswald text-uppercase">Щебень фр. 0-5</h4>
+                        <p class="small gray-text">Отсев</p>
+                        <p>Применяется для расклинцовки, производства плитки и благоустройства.</p>
+                    </div>
+                    <div>
+                        <div class="h4 mt-4">2 600 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 0-5', 2600)">В корзину</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
                 <div class="product-item">
-                    <h4 class="Oswald text-uppercase">Щебень фр. 20-40</h4>
-                    <p class="small gray-text">Средняя фракция</p>
-                    <p>Оптимален для устройства оснований дорог и фундаментов.</p>
-                    <div class="h4 mt-4">1 550 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
-                    <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 20-40', 1550)">В корзину</button>
+                    <div>
+                        <h4 class="Oswald text-uppercase">Щебень фр. 5-20</h4>
+                        <p class="small gray-text">Высокопрочный, ГОСТ 8267-93</p>
+                        <p>Основной компонент для производства бетона и асфальтобетона.</p>
+                    </div>
+                    <div>
+                        <div class="h4 mt-4">4 200 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 5-20', 4200)">В корзину</button>
+                    </div>
                 </div>
             </div>
             <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
                 <div class="product-item">
-                    <h4 class="Oswald text-uppercase">Минпорошок</h4>
-                    <p class="small gray-text">Активированный / неактивированный</p>
-                    <p>Для производства сухих смесей и повышения качества дорожных покрытий.</p>
-                    <div class="h4 mt-4">Цена по запросу</div>
-                    <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Минпорошок', 0)">Запросить расчет</button>
+                    <div>
+                        <h4 class="Oswald text-uppercase">Щебень фр. 20-40</h4>
+                        <p class="small gray-text">Средняя фракция</p>
+                        <p>Оптимален для устройства оснований дорог и фундаментов.</p>
+                    </div>
+                    <div>
+                        <div class="h4 mt-4">3 000 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 20-40', 3000)">В корзину</button>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="projects" class="bg-black">
-    <div class="container">
-        <h2 class="h1 text-uppercase mb-5 text-center">Проекты и поставки</h2>
-        <div class="row text-center g-4">
-            <div class="col-md-4">
-                <h3 class="Oswald gray-text">АСТАНА</h3>
-                <p class="small">Участие в тендерах по развитию инфраструктуры столицы.</p>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="product-item">
+                    <div>
+                        <h4 class="Oswald text-uppercase">Щебень фр. 40-70</h4>
+                        <p class="small gray-text">Крупная фракция</p>
+                        <p>Для строительства железнодорожных путей и массивных конструкций.</p>
+                    </div>
+                    <div>
+                        <div class="h4 mt-4">2 800 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 40-70', 2800)">В корзину</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3 class="Oswald gray-text">АКМОЛИНСКАЯ ОБЛ.</h3>
-                <p class="small">Снабжение дорожно-строительных управлений региона.</p>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="product-item">
+                    <div>
+                        <h4 class="Oswald text-uppercase">Щебень фр. 0-70</h4>
+                        <p class="small gray-text">ЩПС</p>
+                        <p>Щебеночно-песчаная смесь для дорожных покрытий и обочин.</p>
+                    </div>
+                    <div>
+                        <div class="h4 mt-4">2 500 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 0-70', 2500)">В корзину</button>
+                    </div>
+                </div>
             </div>
-            <div class="col-md-4">
-                <h3 class="Oswald gray-text">ЭКСПОРТ</h3>
-                <p class="small">Поставки материала для крупных промышленных узлов.</p>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-item">
+                    <div>
+                        <h4 class="Oswald text-uppercase">Щебень фр. 0-200</h4>
+                        <p class="small gray-text">Бутовый камень / негабарит</p>
+                        <p>Для забутовки, укрепления берегов и ландшафтных работ.</p>
+                    </div>
+                    <div>
+                        <div class="h4 mt-4">2 200 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 0-200', 2200)">В корзину</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -249,6 +252,9 @@
             let sum = weight * price;
             cart.push({name, vol, weight, sum});
             updateUI();
+            
+            let myModal = new bootstrap.Modal(document.getElementById('cartModal'));
+            myModal.show();
         }
     }
 
@@ -261,7 +267,8 @@
         });
         document.getElementById('cartItems').innerHTML = html;
         document.getElementById('totalPrice').innerText = total.toLocaleString();
-        document.getElementById('cartCount').innerText = cart.length;
+        let badge = document.getElementById('cartCount');
+        if(badge) badge.innerText = cart.length;
     }
 </script>
 </body>
