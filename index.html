@@ -3,103 +3,136 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>READY FOR CONSTRUCTION</title>
+    <title>READY FOR CONSTRUCTION | Производство щебня</title>
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Oswald:wght@600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg-black: #000000;
-            --bg-gray: #1a1a1a;
-            --text-gray: #b0b0b0;
-            --yellow: #ffc107;
+            --main-dark: #0a0a0a;
+            --deep-gray: #1a1a1a;
+            --accent-yellow: #ffc107;
+            --text-muted: #888;
         }
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-black);
+            background-color: var(--main-dark);
             color: #ffffff;
+            overflow-x: hidden;
         }
 
+        /* Навигация */
         .navbar {
-            background: var(--bg-black);
-            border-bottom: 1px solid #333;
+            background: var(--main-dark);
+            border-bottom: 1px solid #222;
+            padding: 1.2rem 0;
         }
-
         .navbar-brand { 
             font-family: 'Oswald', sans-serif; 
-            font-size: 1.5rem; 
-            color: #fff !important;
+            font-size: 1.6rem; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
-        
-        .yellow-text { color: var(--yellow); }
+        .yellow { color: var(--accent-yellow); }
+        .nav-link { font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-left: 20px; }
 
+        /* Герой-секция */
         .hero {
-            height: 80vh;
+            height: 90vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1578319439584-104c94d37305?q=80&w=1600') center/cover;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                        url('https://images.unsplash.com/photo-1541625602330-2277a4c4b01d?q=80&w=1600') center/cover no-repeat;
+        }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: 4.5rem; }
+
+        /* О компании */
+        section { padding: 90px 0; }
+        .bg-gray-section { background-color: var(--deep-gray); }
+        .section-title { font-family: 'Oswald', sans-serif; font-size: 2.5rem; margin-bottom: 40px; }
+        
+        .feature-box {
+            border-left: 3px solid var(--accent-yellow);
+            padding-left: 20px;
+            margin-bottom: 30px;
         }
 
-        section { padding: 80px 0; }
-        .bg-grey-section { background-color: var(--bg-gray); }
-
+        /* Продукция */
         .product-card {
-            background: #222;
-            padding: 30px;
+            background: #111;
             border: 1px solid #333;
+            padding: 35px;
+            transition: 0.3s;
+            height: 100%;
         }
-
+        .product-card:hover { border-color: var(--accent-yellow); transform: translateY(-5px); }
+        
         .btn-yellow {
-            background: var(--yellow);
+            background: var(--accent-yellow);
             color: #000;
-            font-weight: bold;
+            font-weight: 800;
             border-radius: 0;
+            padding: 12px 25px;
+            border: none;
             text-transform: uppercase;
         }
 
-        .cart-icon { cursor: pointer; position: relative; }
-        .count {
-            position: absolute; top: -5px; right: -10px;
-            background: var(--yellow); color: #000;
-            border-radius: 50%; padding: 2px 6px; font-size: 10px;
+        /* Корзина */
+        .cart-btn { position: relative; cursor: pointer; }
+        .cart-badge {
+            position: absolute; top: -10px; right: -15px;
+            background: var(--accent-yellow); color: #000;
+            border-radius: 50%; width: 22px; height: 22px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 12px; font-weight: bold;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<header class="navbar navbar-expand-lg navbar-dark sticky-top">
     <div class="container">
-        <a class="navbar-brand" href="#">READY FOR <span class="yellow-text">CONSTRUCTION</span></a>
-        <div class="ms-auto cart-icon" data-bs-toggle="modal" data-bs-target="#cartModal">
-            <svg width="24" height="24" fill="white" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5z"/></svg>
-            <span class="count" id="cartCount">0</span>
+        <a class="navbar-brand" href="#">READY FOR <span class="yellow">CONSTRUCTION</span></a>
+        <div class="ms-auto d-flex align-items-center">
+            <div class="cart-btn me-3" data-bs-toggle="modal" data-bs-target="#cartModal">
+                <svg width="26" height="26" fill="white" viewBox="0 0 16 16"><path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5z"/></svg>
+                <span class="cart-badge" id="cartCount">0</span>
+            </div>
         </div>
     </div>
-</nav>
+</header>
 
 <section class="hero">
-    <div class="container text-center">
-        <h1 class="display-3 fw-bold">READY FOR <span class="yellow-text">CONSTRUCTION</span></h1>
-        <p class="lead text-secondary">Васильковское месторождение. Щебень всех фракций. Прямые поставки.</p>
+    <div class="container text-center" data-aos="zoom-in">
+        <h1 class="text-uppercase mb-4">READY FOR <span class="yellow">CONSTRUCTION</span></h1>
+        <p class="lead mb-5 fs-4">Васильковское месторождение: добыча, дробление и поставка щебня.</p>
+        <a href="#catalog" class="btn btn-yellow px-5">Каталог продукции</a>
     </div>
 </section>
 
-<section id="about" class="bg-grey-section">
+<section id="about" class="bg-gray-section">
     <div class="container">
-        <h2 class="mb-4">О КОМПАНИИ</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <p>Мы — производственное предприятие полного цикла в Акмолинской области. Наш карьер оснащен оборудованием Sandvik и спецтехникой Shantui и Caterpillar.</p>
-                <p>Производим щебень высших марок прочности и минеральный порошок для дорожного строительства.</p>
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="section-title">О НАШЕМ ПРОИЗВОДСТВЕ</h2>
+                <div class="feature-box">
+                    <h4>Прямой производитель</h4>
+                    <p class="text-white-50">Мы владеем карьером в Акмолинской области, что гарантирует лучшую цену без посредников.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Современный парк</h4>
+                    <p class="text-white-50">Дробилки Sandvik, бульдозеры Shantui и экскаваторы Caterpillar обеспечивают отгрузку 24/7.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>Стандарты качества</h4>
+                    <p class="text-white-50">Продукция сертифицирована (СТ-KZ) и соответствует ГОСТам для дорожного строительства.</p>
+                </div>
             </div>
-            <div class="col-md-6">
-                <ul>
-                    <li>Собственный дробильно-сортировочный комплекс</li>
-                    <li>Контроль качества по ГОСТ 8267-93</li>
-                    <li>Коэффициент плотности — 1.6</li>
-                </ul>
+            <div class="col-lg-6" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1574689049868-e94ed5301745?q=80&w=800" class="img-fluid border border-secondary grayscale" alt="Карьер">
             </div>
         </div>
     </div>
@@ -107,30 +140,33 @@
 
 <section id="catalog">
     <div class="container">
-        <h2 class="mb-5 text-center">НАША ПРОДУКЦИЯ</h2>
+        <h2 class="section-title text-center">ПРОДУКЦИЯ И ЦЕНЫ</h2>
         <div class="row g-4">
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up">
                 <div class="product-card">
-                    <h4>Щебень 5-20</h4>
-                    <p class="text-secondary">Для бетона и ЖБИ</p>
-                    <p class="h4">1 890 ₸/тн</p>
-                    <button class="btn btn-yellow w-100 mt-3" onclick="add(1890, 'Щебень 5-20')">В КОРЗИНУ</button>
+                    <h3>Щебень 5-20</h3>
+                    <p class="text-muted small">ГОСТ 8267-93 | Марка М1200</p>
+                    <p>Для производства бетона и ответственных конструкций.</p>
+                    <div class="h3 yellow mt-4">1 890 ₸ <span class="fs-6 text-white">/ тн</span></div>
+                    <button class="btn btn-yellow w-100 mt-3" onclick="buy('Щебень 5-20', 1890)">Добавить в расчет</button>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                 <div class="product-card">
-                    <h4>Щебень 20-40</h4>
-                    <p class="text-secondary">Для оснований дорог</p>
-                    <p class="h4">1 550 ₸/тн</p>
-                    <button class="btn btn-yellow w-100 mt-3" onclick="add(1550, 'Щебень 20-40')">В КОРЗИНУ</button>
+                    <h3>Щебень 20-40</h3>
+                    <p class="text-muted small">ГОСТ 8267-93 | Морозостойкость F300</p>
+                    <p>Для дорожного полотна и фундаментных работ.</p>
+                    <div class="h3 yellow mt-4">1 550 ₸ <span class="fs-6 text-white">/ тн</span></div>
+                    <button class="btn btn-yellow w-100 mt-3" onclick="buy('Щебень 20-40', 1550)">Добавить в расчет</button>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
                 <div class="product-card">
-                    <h4>Минпорошок</h4>
-                    <p class="text-secondary">Для асфальтобетона</p>
-                    <p class="h4">По запросу</p>
-                    <button class="btn btn-yellow w-100 mt-3" onclick="alert('Заявка на расчет отправлена')">УЗНАТЬ ЦЕНУ</button>
+                    <h3>Минпорошок</h3>
+                    <p class="text-muted small">Активированный МП-1</p>
+                    <p>Для улучшения свойств асфальтобетонных смесей.</p>
+                    <div class="h3 yellow mt-4">По запросу</div>
+                    <button class="btn btn-yellow w-100 mt-3" onclick="alert('Свяжитесь с нами для расчета стоимости минпорошка')">Уточнить цену</button>
                 </div>
             </div>
         </div>
@@ -139,45 +175,56 @@
 
 <div class="modal fade" id="cartModal" tabindex="-1">
     <div class="modal-dialog modal-lg text-dark">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">КОРЗИНА (РАСЧЕТ В ТОННАХ)</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        <div class="modal-content border-0">
+            <div class="modal-header bg-dark text-white border-0">
+                <h5 class="modal-title Oswald">РАСЧЕТ СТОИМОСТИ ПОСТАВКИ</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
                 <table class="table">
                     <thead>
-                        <tr><th>Товар</th><th>м³</th><th>тн (x1.6)</th><th>Итого</th></tr>
+                        <tr><th>Материал</th><th>м³</th><th>тн (x1.6)</th><th>Итого</th></tr>
                     </thead>
-                    <tbody id="cartItems"></tbody>
+                    <tbody id="cartBody"></tbody>
                 </table>
-                <div class="text-end h4">Всего: <span id="totalPrice">0</span> ₸</div>
+                <div class="text-end mt-4">
+                    <h3>ИТОГО: <span id="cartTotal" class="text-danger">0</span> ₸</h3>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-dark" data-bs-dismiss="modal">Продолжить</button>
+                <button class="btn btn-yellow" onclick="alert('Заявка принята в работу!')">Заказать доставку</button>
             </div>
         </div>
     </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    let cart = [];
-    function add(p, n) {
-        let v = prompt("Объем в м³:", "20");
-        if(v) {
-            let t = v * 1.6;
-            let s = t * p;
-            cart.push({n, v, t, s});
-            render();
+    AOS.init({ duration: 1000, once: true });
+    let items = [];
+    const KOEF = 1.6;
+
+    function buy(name, price) {
+        let v = prompt(`Укажите объем для ${name} (в м³):`, "25");
+        if(v && !isNaN(v)) {
+            let t = parseFloat(v) * KOEF;
+            let sum = t * price;
+            items.push({name, v, t, sum});
+            update();
         }
     }
-    function render() {
+
+    function update() {
         let h = '', total = 0;
-        cart.forEach(i => {
-            h += `<tr><td>${i.n}</td><td>${i.v}</td><td>${i.t.toFixed(1)}</td><td>${i.s.toLocaleString()}</td></tr>`;
-            total += i.s;
+        items.forEach(i => {
+            h += `<tr><td>${i.name}</td><td>${i.v}</td><td>${i.t.toFixed(1)}</td><td>${i.sum.toLocaleString()} ₸</td></tr>`;
+            total += i.sum;
         });
-        document.getElementById('cartItems').innerHTML = h;
-        document.getElementById('totalPrice').innerText = total.toLocaleString();
-        document.getElementById('cartCount').innerText = cart.length;
+        document.getElementById('cartBody').innerHTML = h;
+        document.getElementById('cartTotal').innerText = total.toLocaleString();
+        document.getElementById('cartCount').innerText = items.length;
     }
 </script>
 </body>
