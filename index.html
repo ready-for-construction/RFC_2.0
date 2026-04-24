@@ -34,12 +34,34 @@
         .nav-link { font-size: 0.85rem; font-weight: 400; text-transform: uppercase; margin-left: 25px; color: var(--accent-gray) !important; transition: 0.3s; }
         .nav-link:hover { color: #fff !important; }
 
+        /* Обновленный блок Hero с вашим фото и фильтром */
         .hero {
             height: 100vh;
             display: flex;
             align-items: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517089596392-db9a5e06a0f4?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+            position: relative;
+            background: #000;
+            overflow: hidden;
         }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('2026-03-26 10-58-37.jpg');
+            background-size: cover;
+            background-position: center;
+            filter: grayscale(50%) brightness(40%); /* Добавлен grayscale(50%) по вашему запросу */
+            z-index: 1;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: 4rem; line-height: 1.1; }
 
         .product-item {
@@ -98,9 +120,7 @@
             color: #fff;
             transition: 0.3s;
         }
-        .phone-link:hover {
-            color: var(--brand-yellow);
-        }
+        .phone-link:hover { color: var(--brand-yellow); }
     </style>
 </head>
 <body>
@@ -116,19 +136,17 @@
             </ul>
             <a href="tel:+77000000000" class="d-flex align-items-center phone-link">
                 <span class="small me-2 d-none d-md-block">ПОЗВОНИТЬ</span>
-                <div class="position-relative">
-                    <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
-                        <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
-                    </svg>
-                </div>
+                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/>
+                    <path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                </svg>
             </a>
         </div>
     </div>
 </header>
 
 <section class="hero">
-    <div class="container" data-aos="fade-up">
+    <div class="hero-bg"></div> <div class="container" data-aos="fade-up">
         <div class="row">
             <div class="col-lg-8">
                 <h1 class="text-uppercase mb-4">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
@@ -158,7 +176,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <div style="filter: grayscale(30%) contrast(110%); border: 1px solid #333; overflow: hidden;">
-                    <img src="о_компании.jpg" class="img-fluid" alt="О компании - Ready for construction" style="display: block; width: 100%;">
+                    <img src="о_компании.jpg" class="img-fluid" alt="О компании" style="display: block; width: 100%;">
                 </div>
             </div>
         </div>
@@ -243,7 +261,7 @@
                             <p>Идеально для устройства качественного дорожного полотна.</p>
                         </div>
                         <div>
-                            <div class="h4 mt-4" style="font-weight: 700;">2 500 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
+                            <div class="h4 mt-4">2 500 ₸ <span class="small" style="font-size:12px">/ тонна</span></div>
                             <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 0-70', 2500)">Заказать</button>
                         </div>
                     </div>
