@@ -1,68 +1,70 @@
 <!DOCTYPE html>
-<html lang="ru-ru" dir="ltr">
+<html xml:lang="ru-ru" lang="ru-ru" dir="ltr">
 <head>
-    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <base href="https://r-f-c.kz/" />
     <title>Главная</title>
     <link href="/templates/rostsayt/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-    
+    <link href="/cache/widgetkit/widgetkit-59275089.css" rel="stylesheet" />
+    <link href="/libraries/gantry/css/grid-responsive.css" rel="stylesheet" />
     <link href="/templates/rostsayt/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="/templates/rostsayt/css/rostsayt.min.css" rel="stylesheet" />
+    <link href="/templates/rostsayt/css/master-gecko.css" rel="stylesheet" />
     <link href="/templates/rostsayt/css/template.css" rel="stylesheet" />
-    
-    <style>
-        /* Инлайновые стили из вашего исходника */
+    <link href="/templates/rostsayt/css/rostsayt.min.css" rel="stylesheet" />
+    <style type="text/css">
         #rt-mainbody-surround { background: #ffffff; }
-        .head-bg { background-image: url(/images/header-bg.jpg); }
     </style>
+    <script src="/media/jui/js/jquery.min.js"></script>
+    <script src="/media/jui/js/jquery-noconflict.js"></script>
+    <script src="/media/jui/js/jquery-migrate.min.js"></script>
+    <script src="/media/jui/js/bootstrap.min.js"></script>
+    <script src="/templates/rostsayt/js/rostsayt.min.js"></script>
 </head>
-
 <body class="logo-type-preset1 header-fixed-enabled">
     <div id="rt-page-surround">
-        <header id="rt-header-surround">
+        <header id="rt-header-surround" class="head-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 col-sm-3 col-xs-6">
                         <a href="/" id="rt-logo"></a>
                     </div>
-                    <div class="col-md-9">
-                        <ul class="menu-main">
-                            <li class="item-101 current active"><a href="/">Главная</a></li>
-                            <li class="item-102"><a href="/about">О компании</a></li>
-                            <li class="item-103"><a href="/catalog">Каталог</a></li>
-                            <li class="item-104"><a href="/korzina">Корзина</a></li>
-                        </ul>
+                    <div class="col-md-9 col-sm-9 col-xs-6">
+                        <div class="main-menu">
+                            <ul class="nav menu">
+                                <li class="item-101 current active"><a href="/">Главная</a></li>
+                                <li class="item-102"><a href="/o-kompanii">О компании</a></li>
+                                <li class="item-103"><a href="/produkciya">Продукция</a></li>
+                                <li class="item-104"><a href="/korzina">Корзина</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </header>
-
         <main id="rt-mainbody-surround">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12">
-                        <div class="blog-featured">
-                            <div class="items-row">
-                                <div class="item">
-                                    <h2>Добро пожаловать</h2>
-                                    <p>Ready for Construction — ваш надежный партнер в строительстве.</p>
+                    <div id="rt-mainbody">
+                        <div class="component-content">
+                            <div class="blog-featured">
                                 </div>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </main>
-
         <footer id="rt-footer-surround">
             <div class="container">
-                <p>&copy; 2026 Ready for Construction</p>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="copyright">
+                            &copy; 2026 Ready for Construction
+                        </div>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
-
-    <script src="/media/jui/js/jquery.min.js"></script>
-    <script src="/templates/rostsayt/js/bootstrap.min.js"></script>
-    <script src="/templates/rostsayt/js/template.js"></script>
 </body>
 </html>
