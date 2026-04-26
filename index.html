@@ -16,7 +16,7 @@
             --deep-gray: #2d2d2d;
             --text-light: #e0e0e0;
             --brand-yellow: #ffc107;
-            --nav-height: 80px; /* Высота шапки для расчетов */
+            --nav-height: 70px;
         }
 
         html {
@@ -42,43 +42,36 @@
         .nav-link { font-size: 0.85rem; font-weight: 400; text-transform: uppercase; margin-left: 25px; color: var(--accent-gray) !important; transition: 0.3s; }
         .nav-link:hover { color: #fff !important; }
 
-        /* Фикс первого экрана под размер окна */
+        /* Первый лист строго по размеру экрана */
         .hero {
-            height: calc(100vh - var(--nav-height)); /* Занимает ровно остаток экрана */
-            min-height: 500px; /* Чтобы на маленьких экранах контент не слипался */
+            height: calc(100vh - var(--nav-height));
+            min-height: 600px;
             display: flex;
             align-items: center;
             background: var(--dark-main);
-            overflow: hidden;
             padding: 0;
         }
         
-        .hero .container {
-            max-height: 100%;
-        }
-
-        .hero h1 { 
-            font-family: 'Oswald', sans-serif; 
-            font-size: clamp(2rem, 4vw, 3.5rem); /* Адаптивный размер шрифта */
-            line-height: 1.1; 
-        }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
 
         .image-frame {
             border: 1px solid #333;
             background: #111;
-            max-height: 70vh; /* Ограничиваем высоту фото, чтобы текст не уползал */
+            max-height: 75vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            overflow: hidden;
         }
 
         .hero-img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 100%;
+            height: auto;
             filter: grayscale(50%) contrast(110%);
+            display: block;
         }
 
+        /* Продукция */
         .product-item {
             background: var(--deep-gray);
             border: 1px solid #444;
@@ -106,12 +99,8 @@
             transition: 0.5s;
             filter: grayscale(80%);
         }
-        
         .product-item:hover { background: #363636; border-color: var(--accent-gray); }
-        .product-item:hover .product-img-box img { 
-            transform: scale(1.1); 
-            filter: grayscale(0%);
-        }
+        .product-item:hover .product-img-box img { transform: scale(1.1); filter: grayscale(0%); }
         
         .btn-industrial {
             background: transparent;
@@ -131,7 +120,8 @@
             margin-bottom: 30px;
         }
 
-        section { padding: 80px 0; }
+        section { padding: 100px 0; }
+        .bg-black { background-color: #000; }
         .gray-text { color: var(--accent-gray); }
         .yellow-text { color: var(--brand-yellow); }
 
@@ -174,12 +164,9 @@
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <h1 class="text-uppercase mb-3">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
-                <p class="mb-4 text-white-50">Разработка месторождений. Внедрение высокотехнологичных схем дробления для обеспечения марок прочности М1000-М1200.</p>
-                <div class="d-flex gap-3">
-                    <a href="#products" class="btn btn-industrial">Каталог</a>
-                    <a href="#about" class="btn btn-industrial border-0 text-secondary">Узнать больше →</a>
-                </div>
+                <h1 class="text-uppercase mb-4">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
+                <p class="lead mb-5 text-white-50">Разработка месторождений Акмолинской области. Внедрение двухстадийных схем дробления для обеспечения высших марок прочности.</p>
+                <a href="#products" class="btn btn-industrial">Посмотреть каталог</a>
             </div>
         </div>
     </div>
@@ -190,11 +177,15 @@
         <div class="row g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <h2 class="h1 text-uppercase mb-4 Oswald">О компании</h2>
-                <p>ТОО «Ready for construction» — ведущая казахстанская компания в сегменте производства инертных материалов.</p>
+                <p>ТОО «Ready for construction» — ведущая казахстанская компания в сегменте дорожного строительства и производства инертных материалов.<br><br>С 2014 года мы выступаем надежным партнером в реализации масштабных инфраструктурных проектов.</p>
                 <div class="mt-5">
                     <div class="project-block">
                         <h5>Васильковское месторождение</h5>
-                        <p class="small text-secondary">Основная сырьевая база.</p>
+                        <p class="small text-secondary">Основная сырьевая база с высокими показателями износостойкости материала.</p>
+                    </div>
+                    <div class="project-block">
+                        <h5>Технологический парк</h5>
+                        <p class="small text-secondary">Использование техники Sandvik и Shantui для бесперебойной добычи и фракционирования.</p>
                     </div>
                 </div>
             </div>
@@ -211,48 +202,44 @@
     <div class="container">
         <h2 class="text-center h1 text-uppercase mb-5">Продукция</h2>
         <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="0-5.jpg" alt="Щебень 0-5"></div>
-                    <div class="product-content">
-                        <div>
-                            <h4 class="Oswald text-uppercase">Щебень фр. 0-5</h4>
-                            <p class="small gray-text">Отсев</p>
-                        </div>
-                        <div class="h4 mt-4">2 600 ₸</div>
-                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 0-5', 2600)">Заказать</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="5-20.jpg" alt="Щебень 5-20"></div>
-                    <div class="product-content">
-                        <div>
-                            <h4 class="Oswald text-uppercase">Щебень фр. 5-20</h4>
-                            <p class="small gray-text">Высокопрочный</p>
-                        </div>
-                        <div class="h4 mt-4">4 200 ₸</div>
-                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 5-20', 4200)">Заказать</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="20-40.jpg" alt="Щебень 20-40"></div>
-                    <div class="product-content">
-                        <div>
-                            <h4 class="Oswald text-uppercase">Щебень фр. 20-40</h4>
-                            <p class="small gray-text">Средняя фракция</p>
-                        </div>
-                        <div class="h4 mt-4">3 000 ₸</div>
-                        <button class="btn btn-industrial w-100 mt-3" onclick="addToCart('Щебень 20-40', 3000)">Заказать</button>
-                    </div>
-                </div>
-            </div>
+            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="0-5.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 0-5</h4><p class="small gray-text">Отсев</p></div><div class="h4 mt-4">2 600 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('0-5', 2600)">Заказать</button></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="5-20.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 5-20</h4><p class="small gray-text">Высокопрочный</p></div><div class="h4 mt-4">4 200 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('5-20', 4200)">Заказать</button></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="20-40.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 20-40</h4><p class="small gray-text">Средняя фракция</p></div><div class="h4 mt-4">3 000 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('20-40', 3000)">Заказать</button></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="40-70.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 40-70</h4><p class="small gray-text">Крупная фракция</p></div><div class="h4 mt-4">2 800 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('40-70', 2800)">Заказать</button></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="0-70.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 0-70</h4><p class="small gray-text">ЩПС</p></div><div class="h4 mt-4">2 500 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('0-70', 2500)">Заказать</button></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="0-200.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 0-200</h4><p class="small gray-text">Бутовый камень</p></div><div class="h4 mt-4">2 200 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('0-200', 2200)">Заказать</button></div></div></div>
         </div>
     </div>
 </section>
+
+<section id="projects" class="bg-black">
+    <div class="container">
+        <h2 class="h1 text-uppercase mb-5 text-center">Проекты и поставки</h2>
+        <div class="row text-center g-4">
+            <div class="col-md-4"><h3 class="Oswald gray-text">АСТАНА</h3><p class="small">Инфраструктурные объекты столицы.</p></div>
+            <div class="col-md-4"><h3 class="Oswald gray-text">АКМОЛИНСКАЯ ОБЛ.</h3><p class="small">Дорожное строительство региона.</p></div>
+            <div class="col-md-4"><h3 class="Oswald gray-text">ЭКСПОРТ</h3><p class="small">Промышленные узлы РК.</p></div>
+        </div>
+    </div>
+</section>
+
+<div class="modal fade" id="cartModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title Oswald text-uppercase">Расчет поставки</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-dark">
+                    <thead><tr><th>Материал</th><th>Объем (м³)</th><th>Сумма</th></tr></thead>
+                    <tbody id="cartItems"></tbody>
+                </table>
+                <div class="text-end h4 mt-4">ИТОГО: <span id="totalPrice" class="gray-text">0</span> ₸</div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -260,7 +247,19 @@
 
 <script>
     AOS.init();
-    // Логика корзины...
+    let cart = [];
+    function addToCart(name, price) {
+        let vol = prompt("Введите объем (м³):", "20");
+        if(vol && !isNaN(vol)) {
+            let sum = parseFloat(vol) * 1.6 * price;
+            cart.push({name, vol, sum});
+            let html = ''; let total = 0;
+            cart.forEach(i => { html += `<tr><td>${i.name}</td><td>${i.vol}</td><td>${i.sum.toLocaleString()} ₸</td></tr>`; total += i.sum; });
+            document.getElementById('cartItems').innerHTML = html;
+            document.getElementById('totalPrice').innerText = total.toLocaleString();
+            new bootstrap.Modal(document.getElementById('cartModal')).show();
+        }
+    }
 </script>
 </body>
 </html>
