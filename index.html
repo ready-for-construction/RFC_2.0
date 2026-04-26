@@ -22,35 +22,44 @@
         html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-main); color: var(--text-light); overflow-x: hidden; }
 
+        /* Навигация */
         .navbar { background: rgba(26, 26, 26, 0.95); border-bottom: 1px solid #333; min-height: var(--nav-height); }
         .navbar-brand { font-family: 'Oswald', sans-serif; letter-spacing: 2px; color: #fff !important; font-size: 1.2rem; }
         .nav-link { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; color: var(--accent-gray) !important; transition: 0.3s; margin: 0 10px; }
         .nav-link:hover { color: #fff !important; }
         .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; }
 
-        .hero { height: calc(100vh - var(--nav-height)); min-height: 600px; display: flex; align-items: center; overflow: hidden; }
-        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
-        .hero-img-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
-        .hero-img { max-width: 90%; max-height: 80vh; object-fit: contain; }
-
+        /* Секции */
         section { padding: 100px 0; }
         .bg-black { background-color: #000; }
         .Oswald { font-family: 'Oswald', sans-serif; }
         .yellow-text { color: var(--brand-yellow); }
         .gray-text { color: var(--accent-gray); }
 
+        /* Первый экран (Hero) */
+        .hero { height: calc(100vh - var(--nav-height)); min-height: 600px; display: flex; align-items: center; overflow: hidden; }
+        .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
+        .hero-img-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+        .hero-img { max-width: 90%; max-height: 80vh; object-fit: contain; }
+
+        /* Продукция */
         .product-item { background: var(--deep-gray); border: 1px solid #444; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
         .product-img-box { height: 220px; overflow: hidden; border-bottom: 1px solid #444; }
         .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         .product-item:hover { border-color: var(--brand-yellow); }
 
+        /* Кнопки */
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
+        /* Проекты */
         .project-card { border: 1px solid #333; overflow: hidden; position: relative; }
         .project-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
         .project-line { border-left: 2px solid var(--brand-yellow); padding-left: 20px; margin-bottom: 25px; }
+
+        /* Карта */
+        .map-placeholder { width: 100%; height: 400px; background: #2d2d2d; border: 1px solid #444; display: flex; align-items: center; justify-content: center; }
 
         @media (max-width: 991px) {
             .hero { height: auto; padding: 50px 0; }
@@ -71,6 +80,7 @@
                 <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
                 <li class="nav-item"><a class="nav-link" href="#products">Продукция</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
             </ul>
             <a href="tel:+77057544704" class="nav-link nav-phone">+7 705 754 47 04</a>
         </div>
@@ -87,7 +97,7 @@
             </div>
             <div class="col-lg-6" data-aos="fade-left">
                 <h1 class="text-uppercase mb-4">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
-                <p class="lead mb-5 text-white-50">Разработка месторождений и поставка высокопрочного щебня. Применение двухстадийного дробления для достижения высшего качества фракций.</p>
+                <p class="lead mb-5 text-white-50">Разработка месторождений и поставка высокопрочного щебня. Применение двухстадийного дробления для обеспечения надежности ваших объектов.</p>
                 <a href="#products" class="btn btn-industrial">Каталог продукции</a>
             </div>
         </div>
@@ -99,14 +109,14 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <h2 class="h1 text-uppercase mb-4 Oswald">О предприятии</h2>
-                <p class="mb-4">ТОО «Ready for construction» специализируется на добыче и переработке горной массы. Мы обеспечиваем строительные объекты Казахстана материалом, соответствующим государственным стандартам.</p>
+                <p class="mb-4">ТОО «Ready for construction» специализируется на добыче и переработке горной массы. Мы обеспечиваем строительные объекты Казахстана материалом высшего качества.</p>
                 <div class="project-line">
                     <h5 class="mb-1">Собственная сырьевая база</h5>
-                    <p class="small gray-text">Васильковское месторождение обеспечивает стабильный объем поставок.</p>
+                    <p class="small gray-text">Васильковское месторождение обеспечивает бесперебойность поставок.</p>
                 </div>
                 <div class="project-line">
                     <h5 class="mb-1">Техническая оснащенность</h5>
-                    <p class="small gray-text">Парк техники Sandvik и Shantui позволяет работать в режиме 24/7.</p>
+                    <p class="small gray-text">Современный парк дробильно-сортировочного оборудования.</p>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
@@ -142,9 +152,39 @@
     </div>
 </section>
 
+<section id="contacts">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5" data-aos="fade-right">
+                <h2 class="h1 text-uppercase mb-4 Oswald">Местоположение</h2>
+                <div class="project-line">
+                    <h5 class="text-uppercase yellow-text mb-2">Адрес:</h5>
+                    <p>Республика Казахстан, г. Астана,<br>Район «Байконыр»</p>
+                </div>
+                <div class="project-line">
+                    <h5 class="text-uppercase yellow-text mb-2">Контакты:</h5>
+                    <p class="mb-1"><a href="tel:+77057544704" class="text-decoration-none text-white font-weight-bold">+7 705 754 47 04</a></p>
+                    <p><a href="mailto:russakooff@gmail.com" class="text-decoration-none gray-text">russakooff@gmail.com</a></p>
+                </div>
+                <div class="project-line">
+                    <h5 class="text-uppercase yellow-text mb-2">Реквизиты:</h5>
+                    <p class="small gray-text">ТОО «Ready for construction»<br>БИН: 140440000160</p>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <div class="map-placeholder">
+                    <span class="gray-text Oswald text-uppercase">Интерактивная карта</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1200, once: false, offset: 100 });</script>
+<script>
+    AOS.init({ duration: 1200, once: false, offset: 100 });
+</script>
 </body>
 </html>
