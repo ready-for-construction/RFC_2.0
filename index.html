@@ -42,7 +42,7 @@
         .nav-link { font-size: 0.85rem; font-weight: 400; text-transform: uppercase; margin-left: 25px; color: var(--accent-gray) !important; transition: 0.3s; }
         .nav-link:hover { color: #fff !important; }
 
-        /* Первый лист без обрезания фото */
+        /* Первый лист */
         .hero {
             height: calc(100vh - var(--nav-height));
             min-height: 500px;
@@ -55,22 +55,20 @@
         
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; }
 
-        .image-frame {
-            border: 1px solid #333;
-            background: #111;
+        .image-container {
             height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            padding: 10px;
+            /* Рамка убрана */
         }
 
         .hero-img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain; 
-            filter: grayscale(50%) contrast(110%);
+            filter: grayscale(20%) contrast(105%);
             display: block;
         }
 
@@ -167,12 +165,11 @@
 <section class="hero">
     <div class="container-fluid p-0 h-100">
         <div class="row align-items-center g-0 h-100">
-            <div class="col-lg-6 h-100" data-aos="fade-right">
-                <div class="image-frame">
+            <div class="col-lg-6 h-100" data-aos="fade-up"> <div class="image-container">
                     <img src="2026-03-26 10-58-37.jpg" class="hero-img" alt="Ready for construction">
                 </div>
             </div>
-            <div class="col-lg-6 p-5" data-aos="fade-left">
+            <div class="col-lg-6 p-5" data-aos="fade-up" data-aos-delay="200">
                 <h1 class="text-uppercase mb-4">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
                 <p class="lead mb-5 text-white-50">Разработка месторождений Акмолинской области. Внедрение двухстадийных схем дробления для обеспечения высших марок прочности.</p>
                 <a href="#products" class="btn btn-industrial">Посмотреть каталог</a>
@@ -184,7 +181,7 @@
 <section id="about" class="bg-black">
     <div class="container">
         <div class="row g-5">
-            <div class="col-lg-6" data-aos="fade-right">
+            <div class="col-lg-6" data-aos="fade-up">
                 <h2 class="h1 text-uppercase mb-4 Oswald">О предприятии</h2>
                 <p>ТОО «Ready for construction» — ведущая казахстанская компания в сегменте дорожного строительства и производства инертных материалов.<br><br>С 2014 года мы выступаем надежным партнером в реализации масштабных инфраструктурных проектов.</p>
                 <div class="mt-5">
@@ -198,8 +195,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div style="filter: grayscale(30%) contrast(110%); border: 1px solid #333; overflow: hidden;">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div style="filter: grayscale(30%) contrast(110%); border: 0; overflow: hidden;">
                     <img src="о_компании.jpg" class="img-fluid" alt="О компании" style="display: block; width: 100%;">
                 </div>
             </div>
@@ -237,7 +234,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    AOS.init();
+    AOS.init({ duration: 1000, once: true });
     function addToCart(n, p) { alert("Менеджер свяжется с вами для расчета поставки фракции " + n); }
 </script>
 </body>
