@@ -41,15 +41,17 @@
 
         .product-item { background: var(--deep-gray); border: 1px solid #444; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
         .product-img-box { height: 220px; overflow: hidden; border-bottom: 1px solid #444; }
-        
-        /* ГРЕЙСКАЛ 90% ДЛЯ ФОТО ПРОДУКЦИИ */
         .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(90%); }
-        
         .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         .product-item:hover { border-color: var(--brand-yellow); }
-        
-        /* При наведении фото становится цветным */
         .product-item:hover .product-img-box img { filter: grayscale(0%); }
+
+        /* Стиль для блока Доставки */
+        .delivery-card { border: 1px solid #333; overflow: hidden; background: #000; }
+        .delivery-img-box { height: 350px; overflow: hidden; }
+        .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; filter: grayscale(90%); }
+        .delivery-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
+        .delivery-text { padding: 30px; }
 
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
@@ -68,6 +70,7 @@
             .hero { height: auto; padding: 50px 0; }
             .hero-img-container { margin-bottom: 30px; }
             .nav-phone { font-size: 0.75rem; }
+            .delivery-img-box { height: 250px; }
         }
     </style>
 </head>
@@ -83,6 +86,7 @@
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
                 <li class="nav-item"><a class="nav-link" href="#products">Продукция</a></li>
+                <li class="nav-item"><a class="nav-link" href="#delivery">Доставка</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
             </ul>
@@ -147,7 +151,37 @@
     </div>
 </section>
 
-<section id="projects" class="bg-black">
+<section id="delivery" class="bg-black">
+    <div class="container">
+        <h2 class="text-center Oswald text-uppercase mb-5 h1">Доставка материала до Вашего объекта</h2>
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="delivery-card">
+                    <div class="delivery-img-box">
+                        <img src="delivery_truck.jpg" alt="Доставка автотранспортом">
+                    </div>
+                    <div class="delivery-text text-center">
+                        <h3 class="Oswald text-uppercase mb-3 yellow-text">Автомобильным транспортом</h3>
+                        <p class="gray-text">Оперативная доставка самосвалами различной грузоподъемности напрямую с карьера на Ваш строительный объект.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="delivery-card">
+                    <div class="delivery-img-box">
+                        <img src="delivery_rail.jpg" alt="Доставка железной дорогой">
+                    </div>
+                    <div class="delivery-text text-center">
+                        <h3 class="Oswald text-uppercase mb-3 yellow-text">По железной дороге</h3>
+                        <p class="gray-text">Масштабные поставки инертных материалов железнодорожными вагонами по всей территории Республики Казахстан.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="projects">
     <div class="container">
         <h2 class="text-center Oswald text-uppercase mb-5 h1">Проекты с нашим участием</h2>
         <div class="row g-4">
@@ -159,7 +193,7 @@
     </div>
 </section>
 
-<section id="contacts">
+<section id="contacts" class="bg-black">
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-lg-5" data-aos="fade-right">
