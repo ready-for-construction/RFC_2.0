@@ -22,43 +22,34 @@
         html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-main); color: var(--text-light); overflow-x: hidden; }
 
-        /* Навигация */
         .navbar { background: rgba(26, 26, 26, 0.95); border-bottom: 1px solid #333; min-height: var(--nav-height); }
         .navbar-brand { font-family: 'Oswald', sans-serif; letter-spacing: 2px; color: #fff !important; font-size: 1.2rem; }
         .nav-link { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; color: var(--accent-gray) !important; transition: 0.3s; margin: 0 10px; }
         .nav-link:hover { color: #fff !important; }
         .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; }
 
-        /* Первый экран */
         .hero { height: calc(100vh - var(--nav-height)); min-height: 600px; display: flex; align-items: center; overflow: hidden; }
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
         .hero-img-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
         .hero-img { max-width: 90%; max-height: 80vh; object-fit: contain; }
 
-        /* Секции */
         section { padding: 100px 0; }
         .bg-black { background-color: #000; }
         .Oswald { font-family: 'Oswald', sans-serif; }
         .yellow-text { color: var(--brand-yellow); }
         .gray-text { color: var(--accent-gray); }
 
-        /* Продукция */
         .product-item { background: var(--deep-gray); border: 1px solid #444; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
         .product-img-box { height: 220px; overflow: hidden; border-bottom: 1px solid #444; }
-        .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(40%); }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
         .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         .product-item:hover { border-color: var(--brand-yellow); }
-        .product-item:hover .product-img-box img { filter: grayscale(0%); transform: scale(1.05); }
 
-        /* Кнопки */
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
-        /* Проекты */
         .project-card { border: 1px solid #333; overflow: hidden; position: relative; }
         .project-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
-        .project-card:hover img { transform: scale(1.05); }
-        
         .project-line { border-left: 2px solid var(--brand-yellow); padding-left: 20px; margin-bottom: 25px; }
 
         @media (max-width: 991px) {
@@ -108,7 +99,7 @@
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
                 <h2 class="h1 text-uppercase mb-4 Oswald">О предприятии</h2>
-                <p class="mb-4">ТОО «Ready for construction» специализируется на добыче и переработке горной массы. Мы обеспечиваем строительные объекты Казахстана материалом, соответствующим государственным стандартам прочности и морозостойкости.</p>
+                <p class="mb-4">ТОО «Ready for construction» специализируется на добыче и переработке горной массы. Мы обеспечиваем строительные объекты Казахстана материалом, соответствующим государственным стандартам.</p>
                 <div class="project-line">
                     <h5 class="mb-1">Собственная сырьевая база</h5>
                     <p class="small gray-text">Васильковское месторождение обеспечивает стабильный объем поставок.</p>
@@ -129,73 +120,19 @@
     <div class="container">
         <h2 class="text-center Oswald text-uppercase mb-5 h1">Продукция и цены</h2>
         <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="0-5.jpg"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 0-5</h4><p class="small gray-text">Щебеночно-песчаная смесь (отсев)</p></div>
-                        <div class="h4 mt-3">2 600 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="5-20.jpg"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 5-20</h4><p class="small gray-text">Мелкая фракция для бетона</p></div>
-                        <div class="h4 mt-3">4 200 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="20-40.jpg"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 20-40</h4><p class="small gray-text">Средняя фракция для дорог</p></div>
-                        <div class="h4 mt-3">3 000 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="40-70.jpg"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 40-70</h4><p class="small gray-text">Крупный щебень для оснований</p></div>
-                        <div class="h4 mt-3">2 800 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="0-70.jpg"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 0-70</h4><p class="small gray-text">Щебеночно-песчаная смесь (ЩПС)</p></div>
-                        <div class="h4 mt-3">2 500 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="0-200.jpg"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 0-200</h4><p class="small gray-text">Бутовый камень</p></div>
-                        <div class="h4 mt-3">2 200 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
+            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="0-5.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 0-5</h4><p class="small gray-text">Отсев</p></div><div class="h4 mt-3">2 600 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="5-20.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 5-20</h4><p class="small gray-text">Мелкая фракция</p></div><div class="h4 mt-3">4 200 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="20-40.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 20-40</h4><p class="small gray-text">Средняя фракция</p></div><div class="h4 mt-3">3 000 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="40-70.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 40-70</h4><p class="small gray-text">Крупный щебень</p></div><div class="h4 mt-3">2 800 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="0-70.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 0-70</h4><p class="small gray-text">ЩПС</p></div><div class="h4 mt-3">2 500 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="0-200.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 0-200</h4><p class="small gray-text">Бутовый камень</p></div><div class="h4 mt-3">2 200 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
         </div>
     </div>
 </section>
 
 <section id="projects" class="bg-black">
     <div class="container">
-        <h2 class="text-center Oswald text-uppercase mb-5 h1">Объекты отгрузки</h2>
+        <h2 class="text-center Oswald text-uppercase mb-5 h1">Проекты с нашим участием</h2>
         <div class="row g-4">
             <div class="col-md-3 col-6" data-aos="fade-up"><div class="project-card"><img src="IMG_4649.jpg"></div></div>
             <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><div class="project-card"><img src="IMG_4647.jpg"></div></div>
@@ -208,8 +145,6 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({ duration: 1200, once: false, offset: 100 });
-</script>
+<script>AOS.init({ duration: 1200, once: false, offset: 100 });</script>
 </body>
 </html>
