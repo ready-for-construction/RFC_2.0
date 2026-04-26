@@ -42,29 +42,33 @@
         .nav-link { font-size: 0.85rem; font-weight: 400; text-transform: uppercase; margin-left: 25px; color: var(--accent-gray) !important; transition: 0.3s; }
         .nav-link:hover { color: #fff !important; }
 
-        /* Унифицированные секции */
+        /* Первый лист */
         .hero {
             height: calc(100vh - var(--nav-height));
-            min-height: 600px;
+            min-height: 500px;
             display: flex;
             align-items: center;
             background: var(--dark-main);
+            padding: 0;
+            overflow: hidden;
         }
         
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2.2rem, 4vw, 3.5rem); line-height: 1.1; }
 
-        .img-wrapper {
-            overflow: hidden;
+        .image-container {
+            height: 100%;
             display: flex;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .hero-img-main {
+        .hero-img {
             max-width: 100%;
-            max-height: 70vh; /* Ограничение высоты для корректного вписывания */
-            object-fit: contain;
-            filter: grayscale(10%) contrast(105%);
+            max-height: 100%;
+            object-fit: contain; 
+            filter: grayscale(20%) contrast(105%);
+            display: block;
         }
 
         /* Продукция */
@@ -110,6 +114,7 @@
         }
         .btn-industrial:hover { background: #fff; color: #000; }
 
+        /* Проекты */
         .project-img-card {
             border: 1px solid #333;
             overflow: hidden;
@@ -121,6 +126,7 @@
             object-fit: cover;
             filter: grayscale(30%);
             transition: 0.5s;
+            display: block;
         }
 
         .project-block {
@@ -146,26 +152,22 @@
                 <li class="nav-item"><a class="nav-link" href="#products">Продукция</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
             </ul>
-            <a href="tel:+77000000000" class="d-flex align-items-center text-decoration-none text-white">
-                <span class="small me-2 d-none d-md-block">ПОЗВОНИТЬ</span>
-                <svg width="24" height="24" fill="currentColor" viewBox="0 0 16 16"><path d="M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z"/><path d="M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/></svg>
-            </a>
         </div>
     </div>
 </header>
 
 <section class="hero">
-    <div class="container">
-        <div class="row g-5 align-items-center">
-            <div class="col-lg-6" data-aos="fade-right">
+    <div class="container-fluid p-0 h-100">
+        <div class="row align-items-center g-0 h-100">
+            <div class="col-lg-6 h-100" data-aos="fade-right">
+                <div class="image-container">
+                    <img src="2026-03-26 10-58-37.jpg" class="hero-img" alt="Производство">
+                </div>
+            </div>
+            <div class="col-lg-6 p-5" data-aos="fade-left">
                 <h1 class="text-uppercase mb-4">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
                 <p class="lead mb-5 text-white-50">Разработка месторождений Акмолинской области. Внедрение двухстадийных схем дробления для обеспечения высших марок прочности.</p>
                 <a href="#products" class="btn btn-industrial">Посмотреть каталог</a>
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="img-wrapper">
-                    <img src="2026-03-26 10-58-37.jpg" class="hero-img-main" alt="Ready for construction">
-                </div>
             </div>
         </div>
     </div>
@@ -176,46 +178,19 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6" data-aos="fade-right">
                 <h2 class="h1 text-uppercase mb-4 Oswald">О предприятии</h2>
-                <p>ТОО «Ready for construction» — ведущая казахстанская компания в сегменте дорожного строительства и производства инертных материалов.<br><br>С 2014 года мы выступаем надежным партнером в реализации масштабных инфраструктурных проектов.</p>
+                <p>ТОО «Ready for construction» — ведущая казахстанская компания в сегменте дорожного строительства и производства инертных материалов.</p>
                 <div class="mt-5">
                     <div class="project-block">
                         <h5>Васильковское месторождение</h5>
                         <p class="small text-secondary">Основная сырьевая база с высокими показателями износостойкости материала.</p>
                     </div>
-                    <div class="project-block">
-                        <h5>Технологический парк</h5>
-                        <p class="small text-secondary">Использование техники Sandvik и Shantui для бесперебойной добычи и фракционирования.</p>
-                    </div>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <div style="filter: grayscale(30%) contrast(110%); overflow: hidden;">
+                <div style="overflow: hidden;">
                     <img src="о_компании.jpg" class="img-fluid" alt="О компании" style="display: block; width: 100%;">
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section id="products">
-    <div class="container">
-        <h2 class="text-center h1 text-uppercase mb-5">Продукция</h2>
-        <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="0-5.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 0-5</h4><p class="small gray-text">Отсев</p></div><div class="h4 mt-4">2 600 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('0-5', 2600)">Заказать</button></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="5-20.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 5-20</h4><p class="small gray-text">Высокопрочный</p></div><div class="h4 mt-4">4 200 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('5-20', 4200)">Заказать</button></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="20-40.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Щебень фр. 20-40</h4><p class="small gray-text">Средняя фракция</p></div><div class="h4 mt-4">3 000 ₸</div><button class="btn btn-industrial w-100 mt-3" onclick="addToCart('20-40', 3000)">Заказать</button></div></div></div>
-        </div>
-    </div>
-</section>
-
-<section id="projects" class="bg-black">
-    <div class="container">
-        <h2 class="h1 text-uppercase mb-5 text-center">Проекты с нашим участием</h2>
-        <div class="row g-4">
-            <div class="col-md-3" data-aos="fade-up"><div class="project-img-card"><img src="IMG_4649.jpg" alt="Объект"></div></div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="project-img-card"><img src="IMG_4647.jpg" alt="Объект"></div></div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="project-img-card"><img src="IMG_4648.jpg" alt="Объект"></div></div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="project-img-card"><img src="IMG_1371.jpg" alt="Объект"></div></div>
         </div>
     </div>
 </section>
@@ -229,8 +204,7 @@
         once: false,
         offset: 100
     });
-    
-    function addToCart(n, p) { alert("Менеджер свяжется с вами для расчета поставки фракции " + n); }
+    function addToCart(n, p) { alert("Вы выбрали: " + n); }
 </script>
 </body>
 </html>
