@@ -69,7 +69,7 @@
         .hero-img {
             max-width: 100%;
             max-height: 100%;
-            object-fit: contain; /* Фото без обрезания */
+            object-fit: contain; 
             filter: grayscale(50%) contrast(110%);
             display: block;
         }
@@ -121,17 +121,23 @@
         .project-img-card {
             border: 1px solid #333;
             overflow: hidden;
-            margin-bottom: 20px;
             background: #000;
         }
         .project-img-card img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
             filter: grayscale(30%);
             transition: 0.5s;
+            display: block;
         }
         .project-img-card:hover img { filter: grayscale(0%); }
+
+        .project-block {
+            border-left: 2px solid var(--accent-gray);
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
 
         section { padding: 100px 0; }
         .bg-black { background-color: #000; }
@@ -175,6 +181,32 @@
     </div>
 </section>
 
+<section id="about" class="bg-black">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <h2 class="h1 text-uppercase mb-4 Oswald">О предприятии</h2>
+                <p>ТОО «Ready for construction» — ведущая казахстанская компания в сегменте дорожного строительства и производства инертных материалов.<br><br>С 2014 года мы выступаем надежным партнером в реализации масштабных инфраструктурных проектов.</p>
+                <div class="mt-5">
+                    <div class="project-block">
+                        <h5>Васильковское месторождение</h5>
+                        <p class="small text-secondary">Основная сырьевая база с высокими показателями износостойкости материала.</p>
+                    </div>
+                    <div class="project-block">
+                        <h5>Технологический парк</h5>
+                        <p class="small text-secondary">Использование техники Sandvik и Shantui для бесперебойной добычи и фракционирования.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div style="filter: grayscale(30%) contrast(110%); border: 1px solid #333; overflow: hidden;">
+                    <img src="о_компании.jpg" class="img-fluid" alt="О компании" style="display: block; width: 100%;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="products">
     <div class="container">
         <h2 class="text-center h1 text-uppercase mb-5">Продукция</h2>
@@ -193,15 +225,10 @@
     <div class="container">
         <h2 class="h1 text-uppercase mb-5 text-center">Проекты с нашим участием</h2>
         <div class="row g-4">
-            <div class="col-md-3" data-aos="fade-up"><div class="project-img-card"><img src="IMG_4649.jpg" alt="Проект 1"></div></div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="project-img-card"><img src="IMG_4647.jpg" alt="Проект 2"></div></div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="project-img-card"><img src="IMG_4648.jpg" alt="Проект 3"></div></div>
-            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="project-img-card"><img src="IMG_1371.jpg" alt="Проект 4"></div></div>
-        </div>
-        <div class="row text-center mt-5 g-4">
-            <div class="col-md-4"><h3 class="Oswald gray-text">АСТАНА</h3><p class="small">Инфраструктурные объекты столицы.</p></div>
-            <div class="col-md-4"><h3 class="Oswald gray-text">АКМОЛИНСКАЯ ОБЛ.</h3><p class="small">Дорожное строительство региона.</p></div>
-            <div class="col-md-4"><h3 class="Oswald gray-text">ЭКСПОРТ</h3><p class="small">Промышленные узлы РК.</p></div>
+            <div class="col-md-3" data-aos="fade-up"><div class="project-img-card"><img src="IMG_4649.jpg" alt="Объект"></div></div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="100"><div class="project-img-card"><img src="IMG_4647.jpg" alt="Объект"></div></div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="200"><div class="project-img-card"><img src="IMG_4648.jpg" alt="Объект"></div></div>
+            <div class="col-md-3" data-aos="fade-up" data-aos-delay="300"><div class="project-img-card"><img src="IMG_1371.jpg" alt="Объект"></div></div>
         </div>
     </div>
 </section>
@@ -211,7 +238,7 @@
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init();
-    function addToCart(n, p) { alert("Вы выбрали: " + n + ". Менеджер свяжется с вами для расчета доставки."); }
+    function addToCart(n, p) { alert("Менеджер свяжется с вами для расчета поставки фракции " + n); }
 </script>
 </body>
 </html>
