@@ -34,28 +34,29 @@
         .nav-link { font-size: 0.85rem; font-weight: 400; text-transform: uppercase; margin-left: 25px; color: var(--accent-gray) !important; transition: 0.3s; }
         .nav-link:hover { color: #fff !important; }
 
-        /* Обновленный Hero: фото справа от текста */
+        /* Стили для Hero, повторяющие стиль блока "О компании" */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
             background: var(--dark-main);
-            padding: 80px 0;
+            padding: 100px 0;
         }
         
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: 3.5rem; line-height: 1.1; }
-        
-        .hero-img-container {
+
+        .image-frame {
             border: 1px solid #333;
-            padding: 10px;
+            overflow: hidden;
             background: #111;
         }
-        
-        .hero-img-container img {
+
+        .hero-img {
+            display: block;
             width: 100%;
             height: auto;
-            filter: grayscale(50%); /* Фильтр 50% ч/б */
-            display: block;
+            filter: grayscale(50%) contrast(110%); /* Стиль как во втором блоке + ваш запрос на 50% ч/б */
+            transition: 0.5s;
         }
 
         .product-item {
@@ -143,14 +144,14 @@
     <div class="container">
         <div class="row align-items-center g-5">
             <div class="col-lg-6" data-aos="fade-right">
+                <div class="image-frame">
+                    <img src="2026-03-26 10-58-37.jpg" class="hero-img" alt="Производство инертных материалов">
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
                 <h1 class="text-uppercase mb-4">Производство инертных материалов <br><span class="gray-text">полного цикла</span></h1>
                 <p class="lead mb-5 text-white-50">Разработка месторождений Акмолинской области. Внедрение двухстадийных схем дробления для обеспечения высших марок прочности.</p>
                 <a href="#products" class="btn btn-industrial">Посмотреть каталог</a>
-            </div>
-            <div class="col-lg-6" data-aos="fade-left">
-                <div class="hero-img-container">
-                    <img src="2026-03-26 10-58-37.jpg" alt="Производство">
-                </div>
             </div>
         </div>
     </div>
