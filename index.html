@@ -16,61 +16,70 @@
             --deep-gray: #2d2d2d;
             --text-light: #e0e0e0;
             --brand-yellow: #ffc107;
-            --nav-height: 70px;
+            --nav-height: 80px;
         }
 
         html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-main); color: var(--text-light); overflow-x: hidden; }
 
+        /* Навигация */
         .navbar { background: rgba(26, 26, 26, 0.95); border-bottom: 1px solid #333; min-height: var(--nav-height); }
         .navbar-brand { font-family: 'Oswald', sans-serif; letter-spacing: 2px; color: #fff !important; font-size: 1.1rem; }
         .nav-link { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; color: var(--accent-gray) !important; transition: 0.3s; margin: 0 5px; }
         .nav-link:hover { color: #fff !important; }
-        .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; font-size: 0.85rem; }
+        .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; font-size: 0.85rem; text-decoration: none; }
 
+        /* Общие стили секций */
         section { padding: 100px 0; }
         .bg-black { background-color: #000; }
         .Oswald { font-family: 'Oswald', sans-serif; }
         .yellow-text { color: var(--brand-yellow); }
         .gray-text { color: var(--accent-gray); }
 
+        /* Эффект грейскала для всех фото продукции и доставки */
+        .grayscale-img { filter: grayscale(90%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        /* Hero Section */
         .hero { height: calc(100vh - var(--nav-height)); min-height: 600px; display: flex; align-items: center; overflow: hidden; }
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
         .hero-img-container { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
         .hero-img { max-width: 90%; max-height: 80vh; object-fit: contain; }
 
+        /* Карточки продукции */
         .product-item { background: var(--deep-gray); border: 1px solid #444; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
         .product-img-box { height: 220px; overflow: hidden; border-bottom: 1px solid #444; }
-        .product-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: grayscale(90%); }
+        .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
         .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         .product-item:hover { border-color: var(--brand-yellow); }
-        .product-item:hover .product-img-box img { filter: grayscale(0%); }
+        .product-item:hover .grayscale-img { filter: grayscale(0%); }
 
-        /* Стиль для блока Доставки */
-        .delivery-card { border: 1px solid #333; overflow: hidden; background: #000; }
+        /* Карточки доставки */
+        .delivery-card { border: 1px solid #333; overflow: hidden; background: #000; height: 100%; transition: 0.4s; }
         .delivery-img-box { height: 350px; overflow: hidden; }
-        .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; filter: grayscale(90%); }
+        .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: 0.6s; }
+        .delivery-card:hover { border-color: var(--brand-yellow); }
         .delivery-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
         .delivery-text { padding: 30px; }
 
+        /* Кнопки */
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
-        .project-card { border: 1px solid #333; overflow: hidden; position: relative; }
+        /* Проекты */
+        .project-card { border: 1px solid #333; overflow: hidden; }
         .project-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
         .project-line { border-left: 2px solid var(--brand-yellow); padding-left: 20px; margin-bottom: 25px; }
 
+        /* Карта */
         .map-placeholder { width: 100%; height: 400px; background: #2d2d2d; border: 1px solid #444; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; position: relative; overflow: hidden; }
         .map-placeholder:hover { border-color: var(--brand-yellow); }
-        .map-placeholder::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://static-maps.yandex.ru/1.x/?ll=69.272644,53.438467&z=13&l=sat&size=600,400') center/cover; opacity: 0.3; transition: 0.3s; }
-        .map-placeholder:hover::before { opacity: 0.5; }
+        .map-placeholder::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://static-maps.yandex.ru/1.x/?ll=69.272644,53.438467&z=13&l=sat&size=600,400') center/cover; opacity: 0.3; }
         .map-content { position: relative; z-index: 2; text-align: center; }
 
         @media (max-width: 991px) {
             .hero { height: auto; padding: 50px 0; }
-            .hero-img-container { margin-bottom: 30px; }
-            .nav-phone { font-size: 0.75rem; }
             .delivery-img-box { height: 250px; }
+            .navbar-brand { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -83,16 +92,16 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navMenu">
-            <ul class="navbar-nav mx-auto">
+            <ul class="navbar-nav mx-auto text-center">
                 <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
                 <li class="nav-item"><a class="nav-link" href="#products">Продукция</a></li>
                 <li class="nav-item"><a class="nav-link" href="#delivery">Доставка</a></li>
                 <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
             </ul>
-            <div class="d-flex flex-column align-items-end">
-                <a href="tel:+77057544704" class="nav-link nav-phone p-0">+7 705 754 47 04</a>
-                <a href="tel:+77057547590" class="nav-link nav-phone p-0">+7 705 754 75 90</a>
+            <div class="d-flex flex-column align-items-lg-end align-items-center mt-lg-0 mt-3">
+                <a href="tel:+77057544704" class="nav-phone mb-1">+7 705 754 47 04</a>
+                <a href="tel:+77057547590" class="nav-phone">+7 705 754 75 90</a>
             </div>
         </div>
     </div>
@@ -127,11 +136,11 @@
                 </div>
                 <div class="project-line">
                     <h5 class="mb-1">Техническая оснащенность</h5>
-                    <p class="small gray-text">Современный парк дробильно-сортировочного оборудования.</p>
+                    <p class="small gray-text">Современный парк дробильно-сортировочного оборудования без использования роторных дробилок.</p>
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <img src="о_компании.jpg" class="img-fluid" alt="Техника компании">
+                <img src="о_компании.jpg" class="img-fluid grayscale-img" alt="Техника компании">
             </div>
         </div>
     </div>
@@ -141,12 +150,66 @@
     <div class="container">
         <h2 class="text-center Oswald text-uppercase mb-5 h1">Продукция и цены</h2>
         <div class="row g-4">
-            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="0-5.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 0-5</h4><p class="small gray-text">Отсев</p></div><div class="h4 mt-3">2 600 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="5-20.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 5-20</h4><p class="small gray-text">Мелкая фракция</p></div><div class="h4 mt-3">4 200 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="20-40.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 20-40</h4><p class="small gray-text">Средняя фракция</p></div><div class="h4 mt-3">3 000 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in"><div class="product-item"><div class="product-img-box"><img src="40-70.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 40-70</h4><p class="small gray-text">Крупный щебень</p></div><div class="h4 mt-3">2 800 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100"><div class="product-item"><div class="product-img-box"><img src="0-70.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 0-70</h4><p class="small gray-text">ЩПС</p></div><div class="h4 mt-3">2 500 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200"><div class="product-item"><div class="product-img-box"><img src="0-200.jpg"></div><div class="product-content"><div><h4 class="Oswald text-uppercase">Фракция 0-200</h4><p class="small gray-text">Бутовый камень</p></div><div class="h4 mt-3">2 200 ₸</div><a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a></div></div></div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="product-item">
+                    <div class="product-img-box"><img src="0-5.jpg" class="grayscale-img"></div>
+                    <div class="product-content">
+                        <div><h4 class="Oswald text-uppercase">Фракция 0-5</h4><p class="small gray-text">Отсев</p></div>
+                        <div class="h4 mt-3">2 600 ₸</div>
+                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="product-item">
+                    <div class="product-img-box"><img src="5-20.jpg" class="grayscale-img"></div>
+                    <div class="product-content">
+                        <div><h4 class="Oswald text-uppercase">Фракция 5-20</h4><p class="small gray-text">Мелкая фракция</p></div>
+                        <div class="h4 mt-3">4 200 ₸</div>
+                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-item">
+                    <div class="product-img-box"><img src="20-40.jpg" class="grayscale-img"></div>
+                    <div class="product-content">
+                        <div><h4 class="Oswald text-uppercase">Фракция 20-40</h4><p class="small gray-text">Средняя фракция</p></div>
+                        <div class="h4 mt-3">3 000 ₸</div>
+                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in">
+                <div class="product-item">
+                    <div class="product-img-box"><img src="40-70.jpg" class="grayscale-img"></div>
+                    <div class="product-content">
+                        <div><h4 class="Oswald text-uppercase">Фракция 40-70</h4><p class="small gray-text">Крупный щебень</p></div>
+                        <div class="h4 mt-3">2 800 ₸</div>
+                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="product-item">
+                    <div class="product-img-box"><img src="0-70.jpg" class="grayscale-img"></div>
+                    <div class="product-content">
+                        <div><h4 class="Oswald text-uppercase">Фракция 0-70</h4><p class="small gray-text">ЩПС</p></div>
+                        <div class="h4 mt-3">2 500 ₸</div>
+                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="product-item">
+                    <div class="product-img-box"><img src="0-200.jpg" class="grayscale-img"></div>
+                    <div class="product-content">
+                        <div><h4 class="Oswald text-uppercase">Фракция 0-200</h4><p class="small gray-text">Бутовый камень</p></div>
+                        <div class="h4 mt-3">2 200 ₸</div>
+                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -158,22 +221,22 @@
             <div class="col-md-6" data-aos="fade-right">
                 <div class="delivery-card">
                     <div class="delivery-img-box">
-                        <img src="delivery_truck.jpg" alt="Доставка автотранспортом">
+                        <img src="auto.png" class="grayscale-img" alt="Доставка автотранспортом">
                     </div>
                     <div class="delivery-text text-center">
                         <h3 class="Oswald text-uppercase mb-3 yellow-text">Автомобильным транспортом</h3>
-                        <p class="gray-text">Оперативная доставка самосвалами различной грузоподъемности напрямую с карьера на Ваш строительный объект.</p>
+                        <p class="gray-text">Оперативная доставка тягачами с полуприцепами типа «Тонар» напрямую с карьера на Ваш строительный объект.</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-6" data-aos="fade-left">
                 <div class="delivery-card">
                     <div class="delivery-img-box">
-                        <img src="delivery_rail.jpg" alt="Доставка железной дорогой">
+                        <img src="railways.png" class="grayscale-img" alt="Доставка железной дорогой">
                     </div>
                     <div class="delivery-text text-center">
                         <h3 class="Oswald text-uppercase mb-3 yellow-text">По железной дороге</h3>
-                        <p class="gray-text">Масштабные поставки инертных материалов железнодорожными вагонами по всей территории Республики Казахстан.</p>
+                        <p class="gray-text">Масштабные поставки инертных материалов железнодорожными составами по всей территории Республики Казахстан.</p>
                     </div>
                 </div>
             </div>
@@ -185,10 +248,10 @@
     <div class="container">
         <h2 class="text-center Oswald text-uppercase mb-5 h1">Проекты с нашим участием</h2>
         <div class="row g-4">
-            <div class="col-md-3 col-6" data-aos="fade-up"><div class="project-card"><img src="IMG_4649.jpg"></div></div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><div class="project-card"><img src="IMG_4647.jpg"></div></div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><div class="project-card"><img src="IMG_4648.jpg"></div></div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><div class="project-card"><img src="IMG_1371.jpg"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up"><div class="project-card"><img src="IMG_4649.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><div class="project-card"><img src="IMG_4647.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><div class="project-card"><img src="IMG_4648.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><div class="project-card"><img src="IMG_1371.jpg" class="grayscale-img"></div></div>
         </div>
     </div>
 </section>
@@ -230,6 +293,13 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>AOS.init({ duration: 1200, once: false, offset: 100 });</script>
+<script>
+    AOS.init({ duration: 1200, once: false, offset: 100 });
+    
+    // Плавный переход при закрытии мобильного меню
+    $('.navbar-nav>li>a').on('click', function(){
+        $('.navbar-collapse').collapse('hide');
+    });
+</script>
 </body>
 </html>
