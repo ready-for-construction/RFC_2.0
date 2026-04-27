@@ -36,7 +36,7 @@
         .yellow-text { color: var(--brand-yellow); }
         .gray-text { color: var(--accent-gray); }
 
-        /* Грейскал 90% (для Продукции и Проектов) */
+        /* Грейскал 90% (для Продукции и Галереи) */
         .grayscale-img { filter: grayscale(90%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         
         /* Грейскал 50% (для О предприятии и Доставки) */
@@ -71,8 +71,8 @@
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
-        .project-card { border: 1px solid #333; overflow: hidden; }
-        .project-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
+        .gallery-card { border: 1px solid #333; overflow: hidden; }
+        .gallery-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
         .project-line { border-left: 2px solid var(--brand-yellow); padding-left: 20px; margin-bottom: 25px; }
 
         .map-placeholder { width: 100%; height: 400px; background: #2d2d2d; border: 1px solid #444; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; position: relative; overflow: hidden; }
@@ -100,7 +100,7 @@
                 <li class="nav-item"><a class="nav-link" href="#about">О компании</a></li>
                 <li class="nav-item"><a class="nav-link" href="#products">Продукция</a></li>
                 <li class="nav-item"><a class="nav-link" href="#delivery">Доставка</a></li>
-                <li class="nav-item"><a class="nav-link" href="#projects">Проекты</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Галерея</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
             </ul>
             <div class="d-flex flex-column align-items-lg-end align-items-center mt-lg-0 mt-3">
@@ -250,14 +250,14 @@
     </div>
 </section>
 
-<section id="projects">
+<section id="gallery">
     <div class="container">
-        <h2 class="text-center Oswald text-uppercase mb-5 h1">Проекты с нашим участием</h2>
+        <h2 class="text-center Oswald text-uppercase mb-5 h1">Галерея</h2>
         <div class="row g-4">
-            <div class="col-md-3 col-6" data-aos="fade-up"><div class="project-card"><img src="IMG_4649.jpg" class="grayscale-img"></div></div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><div class="project-card"><img src="IMG_4647.jpg" class="grayscale-img"></div></div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><div class="project-card"><img src="IMG_4648.jpg" class="grayscale-img"></div></div>
-            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><div class="project-card"><img src="IMG_1371.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up"><div class="gallery-card"><img src="IMG_4649.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="100"><div class="gallery-card"><img src="IMG_4647.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="200"><div class="gallery-card"><img src="IMG_4648.jpg" class="grayscale-img"></div></div>
+            <div class="col-md-3 col-6" data-aos="fade-up" data-aos-delay="300"><div class="gallery-card"><img src="IMG_1371.jpg" class="grayscale-img"></div></div>
         </div>
     </div>
 </section>
