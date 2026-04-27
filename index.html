@@ -26,19 +26,23 @@
         .navbar { background: rgba(26, 26, 26, 0.95); border-bottom: 1px solid #333; min-height: var(--nav-height); }
         .navbar-brand { font-family: 'Oswald', sans-serif; letter-spacing: 2px; color: #fff !important; font-size: 1.1rem; }
         .nav-link { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; color: var(--accent-gray) !important; transition: 0.3s; margin: 0 5px; }
-        .nav-link:hover { color: #fff !important; }
+        /* Эффект наведения: ЖЕЛТЫЙ ЦВЕТ */
+        .nav-link:hover { color: var(--brand-yellow) !important; }
         .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; font-size: 0.85rem; text-decoration: none; }
 
-        /* Общие стили секций */
         section { padding: 100px 0; }
         .bg-black { background-color: #000; }
         .Oswald { font-family: 'Oswald', sans-serif; }
         .yellow-text { color: var(--brand-yellow); }
         .gray-text { color: var(--accent-gray); }
 
-        /* Эффект грейскала для всех фото продукции и доставки */
+        /* Эффекты для изображений */
+        /* Стандартный: 90% ч/б (для продукции) */
         .grayscale-img { filter: grayscale(90%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
         
+        /* Грейскал 50% (для О предприятии и Доставки) */
+        .delivery-grayscale { filter: grayscale(50%); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+
         /* Hero Section */
         .hero { height: calc(100vh - var(--nav-height)); min-height: 600px; display: flex; align-items: center; overflow: hidden; }
         .hero h1 { font-family: 'Oswald', sans-serif; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; }
@@ -49,28 +53,29 @@
         .product-item { background: var(--deep-gray); border: 1px solid #444; transition: 0.4s; height: 100%; display: flex; flex-direction: column; }
         .product-img-box { height: 220px; overflow: hidden; border-bottom: 1px solid #444; }
         .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
-        .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         .product-item:hover { border-color: var(--brand-yellow); }
         .product-item:hover .grayscale-img { filter: grayscale(0%); }
+        .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
 
-        /* Карточки доставки */
+        /* Карточки доставки и О предприятии */
         .delivery-card { border: 1px solid #333; overflow: hidden; background: #000; height: 100%; transition: 0.4s; }
         .delivery-img-box { height: 350px; overflow: hidden; }
-        .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); transition: 0.6s; }
+        .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); }
+        
         .delivery-card:hover { border-color: var(--brand-yellow); }
-        .delivery-card:hover img { filter: grayscale(0%); transform: scale(1.05); }
-        .delivery-text { padding: 30px; }
+        .delivery-card:hover .delivery-grayscale { filter: grayscale(0%); transform: scale(1.05); }
+        
+        /* Ховер для фото в "О предприятии" */
+        .img-hover-box { overflow: hidden; transition: 0.4s; }
+        .img-hover-box:hover .delivery-grayscale { filter: grayscale(0%); }
 
-        /* Кнопки */
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
-        /* Проекты */
         .project-card { border: 1px solid #333; overflow: hidden; }
         .project-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
         .project-line { border-left: 2px solid var(--brand-yellow); padding-left: 20px; margin-bottom: 25px; }
 
-        /* Карта */
         .map-placeholder { width: 100%; height: 400px; background: #2d2d2d; border: 1px solid #444; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; position: relative; overflow: hidden; }
         .map-placeholder:hover { border-color: var(--brand-yellow); }
         .map-placeholder::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://static-maps.yandex.ru/1.x/?ll=69.272644,53.438467&z=13&l=sat&size=600,400') center/cover; opacity: 0.3; }
@@ -140,7 +145,9 @@
                 </div>
             </div>
             <div class="col-lg-6" data-aos="fade-left">
-                <img src="о_компании.jpg" class="img-fluid grayscale-img" alt="Техника компании">
+                <div class="img-hover-box">
+                    <img src="о_компании.jpg" class="img-fluid delivery-grayscale" alt="Техника компании">
+                </div>
             </div>
         </div>
     </div>
@@ -221,7 +228,7 @@
             <div class="col-md-6" data-aos="fade-right">
                 <div class="delivery-card">
                     <div class="delivery-img-box">
-                        <img src="auto.png" class="grayscale-img" alt="Доставка автотранспортом">
+                        <img src="auto.png" class="delivery-grayscale" alt="Доставка автотранспортом">
                     </div>
                     <div class="delivery-text text-center">
                         <h3 class="Oswald text-uppercase mb-3 yellow-text">Автомобильным транспортом</h3>
@@ -232,7 +239,7 @@
             <div class="col-md-6" data-aos="fade-left">
                 <div class="delivery-card">
                     <div class="delivery-img-box">
-                        <img src="railways.png" class="grayscale-img" alt="Доставка железной дорогой">
+                        <img src="railways.png" class="delivery-grayscale" alt="Доставка железной дорогой">
                     </div>
                     <div class="delivery-text text-center">
                         <h3 class="Oswald text-uppercase mb-3 yellow-text">По железной дороге</h3>
