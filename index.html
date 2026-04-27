@@ -24,9 +24,17 @@
 
         /* Навигация */
         .navbar { background: rgba(26, 26, 26, 0.95); border-bottom: 1px solid #333; min-height: var(--nav-height); }
-        .navbar-brand { font-family: 'Oswald', sans-serif; letter-spacing: 2px; color: #fff !important; font-size: 1.1rem; }
+        
+        /* ЛОГОТИП: Увеличено на 20% (было 1.1rem -> стало 1.35rem) */
+        .navbar-brand { 
+            font-family: 'Oswald', sans-serif; 
+            letter-spacing: 2px; 
+            color: #fff !important; 
+            font-size: 1.35rem; 
+            text-transform: uppercase;
+        }
+
         .nav-link { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; color: var(--accent-gray) !important; transition: 0.3s; margin: 0 5px; }
-        /* Ховер меню: Желтый цвет */
         .nav-link:hover { color: var(--brand-yellow) !important; }
         .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; font-size: 0.85rem; text-decoration: none; }
 
@@ -36,10 +44,7 @@
         .yellow-text { color: var(--brand-yellow); }
         .gray-text { color: var(--accent-gray); }
 
-        /* Грейскал 90% (для Продукции и Галереи) */
         .grayscale-img { filter: grayscale(90%); transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
-        
-        /* Грейскал 50% (для О предприятии и Доставки) */
         .delivery-grayscale { filter: grayscale(50%); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
 
         /* Hero Section */
@@ -60,19 +65,19 @@
         .delivery-card { border: 1px solid #333; overflow: hidden; background: #000; height: 100%; transition: 0.4s; }
         .delivery-img-box { height: 350px; overflow: hidden; }
         .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transform: scale(1); }
-        
         .delivery-card:hover { border-color: var(--brand-yellow); }
         .delivery-card:hover .delivery-grayscale { filter: grayscale(0%); transform: scale(1.05); }
         
-        /* Ховер для фото в "О предприятии" */
         .img-hover-box { overflow: hidden; transition: 0.4s; }
         .img-hover-box:hover .delivery-grayscale { filter: grayscale(0%); }
 
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
+        /* Галерея */
         .gallery-card { border: 1px solid #333; overflow: hidden; }
-        .gallery-card img { width: 100%; height: 300px; object-fit: cover; display: block; transition: 0.5s; }
+        .gallery-card img { width: 100%; height: 360px; object-fit: cover; display: block; transition: 0.5s; }
+        
         .project-line { border-left: 2px solid var(--brand-yellow); padding-left: 20px; margin-bottom: 25px; }
 
         .map-placeholder { width: 100%; height: 400px; background: #2d2d2d; border: 1px solid #444; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; position: relative; overflow: hidden; }
@@ -83,7 +88,8 @@
         @media (max-width: 991px) {
             .hero { height: auto; padding: 50px 0; }
             .delivery-img-box { height: 250px; }
-            .navbar-brand { font-size: 0.9rem; }
+            .navbar-brand { font-size: 1.1rem; }
+            .gallery-card img { height: 280px; }
         }
     </style>
 </head>
