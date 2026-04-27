@@ -23,16 +23,7 @@
         body { font-family: 'Montserrat', sans-serif; background-color: var(--dark-main); color: var(--text-light); overflow-x: hidden; }
 
         .navbar { background: rgba(26, 26, 26, 0.95); border-bottom: 1px solid #333; min-height: var(--nav-height); }
-        
-        /* Логотип в шапке */
-        .navbar-brand { 
-            font-family: 'Oswald', sans-serif; 
-            letter-spacing: 2px; 
-            color: #fff !important; 
-            font-size: 1.1rem; 
-            text-transform: uppercase;
-        }
-
+        .navbar-brand { font-family: 'Oswald', sans-serif; letter-spacing: 2px; color: #fff !important; font-size: 1.1rem; text-transform: uppercase; }
         .nav-link { font-size: 0.8rem; font-weight: 400; text-transform: uppercase; color: var(--accent-gray) !important; transition: 0.3s; margin: 0 5px; }
         .nav-link:hover { color: var(--brand-yellow) !important; }
         .nav-phone { font-weight: 700; color: var(--brand-yellow) !important; white-space: nowrap; font-size: 0.85rem; text-decoration: none; }
@@ -52,15 +43,17 @@
         .product-img-box img { width: 100%; height: 100%; object-fit: cover; }
         .product-item:hover { border-color: var(--brand-yellow); }
         .product-item:hover .grayscale-img { filter: grayscale(0%); }
-        
         .product-content { padding: 25px; display: flex; flex-direction: column; justify-content: space-between; flex-grow: 1; }
         
-        /* ОПИСАНИЕ МАТЕРИАЛОВ: Увеличено на 20% (с 0.8rem до 0.95rem) */
-        .product-content p { 
-            font-size: 0.95rem; 
-            color: var(--accent-gray);
-            margin-top: 5px;
-        }
+        /* Увеличенное описание материалов */
+        .product-content p { font-size: 0.95rem; color: var(--accent-gray); margin-top: 5px; }
+
+        /* Доставка */
+        .delivery-card { border: 1px solid #333; overflow: hidden; background: #000; height: 100%; transition: 0.4s; }
+        .delivery-img-box { height: 350px; overflow: hidden; }
+        .delivery-img-box img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .delivery-card:hover { border-color: var(--brand-yellow); }
+        .delivery-card:hover .delivery-grayscale { filter: grayscale(0%); transform: scale(1.05); }
 
         /* Галерея */
         .gallery-card { border: 1px solid #333; overflow: hidden; }
@@ -71,8 +64,15 @@
         .btn-industrial { background: transparent; color: #fff; border: 1px solid var(--accent-gray); padding: 12px 25px; text-transform: uppercase; font-weight: 700; border-radius: 0; transition: 0.3s; text-decoration: none; display: inline-block; text-align: center; font-size: 0.9rem; }
         .btn-industrial:hover { background: #fff; color: #000; border-color: #fff; }
 
+        /* Карта */
+        .map-placeholder { width: 100%; height: 400px; background: #2d2d2d; border: 1px solid #444; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: 0.3s; position: relative; overflow: hidden; }
+        .map-placeholder:hover { border-color: var(--brand-yellow); }
+        .map-placeholder::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: url('https://static-maps.yandex.ru/1.x/?ll=69.272644,53.438467&z=13&l=sat&size=600,400') center/cover; opacity: 0.3; }
+        .map-content { position: relative; z-index: 2; text-align: center; }
+
         @media (max-width: 991px) {
             .navbar-brand { font-size: 0.9rem; }
+            .delivery-img-box { height: 250px; }
         }
     </style>
 </head>
@@ -134,33 +134,29 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="zoom-in">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="40-70.jpg" class="grayscale-img"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 40-70</h4><p>Крупный щебень для оснований дорог и массивных конструкций.</p></div>
-                        <div class="h4 mt-3">2 800 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+        </div>
+    </div>
+</section>
+
+<section id="delivery" class="bg-black">
+    <div class="container">
+        <h2 class="text-center Oswald text-uppercase mb-5 h1">Доставка</h2>
+        <div class="row g-4">
+            <div class="col-md-6" data-aos="fade-right">
+                <div class="delivery-card">
+                    <div class="delivery-img-box"><img src="auto.png" class="delivery-grayscale"></div>
+                    <div class="p-4 text-center">
+                        <h3 class="Oswald text-uppercase mb-3 yellow-text">Автотранспортом</h3>
+                        <p class="gray-text">Оперативная доставка напрямую с карьера на Ваш объект.</p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="0-70.jpg" class="grayscale-img"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 0-70</h4><p>Щебеночно-песчаная смесь (ЩПС) для устройства оснований.</p></div>
-                        <div class="h4 mt-3">2 500 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                <div class="product-item">
-                    <div class="product-img-box"><img src="0-200.jpg" class="grayscale-img"></div>
-                    <div class="product-content">
-                        <div><h4 class="Oswald text-uppercase">Фракция 0-200</h4><p>Бутовый камень для гидротехнических работ и укрепления берегов.</p></div>
-                        <div class="h4 mt-3">2 200 ₸</div>
-                        <a href="tel:+77057544704" class="btn btn-industrial w-100 mt-3">Заказать</a>
+            <div class="col-md-6" data-aos="fade-left">
+                <div class="delivery-card">
+                    <div class="delivery-img-box"><img src="railways.png" class="delivery-grayscale"></div>
+                    <div class="p-4 text-center">
+                        <h3 class="Oswald text-uppercase mb-3 yellow-text">Ж/Д транспортом</h3>
+                        <p class="gray-text">Масштабные поставки составами по всей территории РК.</p>
                     </div>
                 </div>
             </div>
@@ -176,6 +172,38 @@
             <div class="col-md-3 col-6"><div class="gallery-card"><img src="IMG_4647.jpg" class="grayscale-img"></div></div>
             <div class="col-md-3 col-6"><div class="gallery-card"><img src="IMG_4648.jpg" class="grayscale-img"></div></div>
             <div class="col-md-3 col-6"><div class="gallery-card"><img src="IMG_1371.jpg" class="grayscale-img"></div></div>
+        </div>
+    </div>
+</section>
+
+<section id="contacts" class="bg-black">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-5" data-aos="fade-right">
+                <h2 class="h1 text-uppercase mb-4 Oswald">Контакты</h2>
+                <div class="project-line">
+                    <h5 class="text-uppercase yellow-text mb-2">Адрес:</h5>
+                    <p class="mb-1">РК, Акмолинская обл., Зерендинский район,</p>
+                    <p>10-ый пост (ГОК "Васильковский")</p>
+                </div>
+                <div class="project-line">
+                    <h5 class="text-uppercase yellow-text mb-2">Телефоны:</h5>
+                    <p class="mb-1"><a href="tel:+77057544704" class="text-decoration-none text-white">+7 705 754 47 04</a></p>
+                    <p><a href="tel:+77057547590" class="text-decoration-none text-white">+7 705 754 75 90</a></p>
+                </div>
+                <div class="project-line">
+                    <h5 class="text-uppercase yellow-text mb-2">Реквизиты:</h5>
+                    <p class="small gray-text">ТОО «Ready for construction»<br>БИН: 140440000160</p>
+                </div>
+            </div>
+            <div class="col-lg-7" data-aos="fade-left">
+                <a href="https://yandex.kz/maps/org/ready_for_construction/242502476679/?l=sat%2Cskl&ll=69.272644%2C53.438467&z=15" target="_blank" class="map-placeholder">
+                    <div class="map-content">
+                        <svg width="40" height="40" fill="#ffc107" class="mb-3" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                        <div class="text-white Oswald text-uppercase">Открыть на Яндекс Картах</div>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 </section>
